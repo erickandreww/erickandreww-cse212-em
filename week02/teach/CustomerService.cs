@@ -3,7 +3,8 @@
 /// added and allows customers to be serviced.
 /// </summary>
 public class CustomerService {
-    public static void Run() {
+    public static void Run()
+    {
         // Example code to see what's in the customer service queue:
         // var cs = new CustomerService(10);
         // Console.WriteLine(cs);
@@ -11,18 +12,38 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: making a new customer service, but inserting a invalid size
+        // Expected Result: the size of the queue need to be 10
         Console.WriteLine("Test 1");
+        var costumerS = new CustomerService(-5);
+        Console.WriteLine($"Queue size: {costumerS._maxSize}");
 
-        // Defect(s) Found: 
+        // Defect(s) Found: no default
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Check if the AddNewCustomer enqueues a new customer as expected, and if the ServeCustomer function dequeues.
+        // Expected Result: enqueue and dequeue working well
         Console.WriteLine("Test 2");
+        costumerS = new CustomerService(1);
+        costumerS.AddNewCustomer();
+        Console.WriteLine(costumerS);
+        costumerS.ServeCustomer();
+        Console.WriteLine(costumerS);
+
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
+        
+        // Test 3
+        // Scenario: Adding more customers than the queue size
+        // Expected Result: show a error message when trying to add
+        Console.WriteLine("Test 2");
+        costumerS = new CustomerService(2);
+        costumerS.AddNewCustomer();
+        costumerS.AddNewCustomer();
+        costumerS.AddNewCustomer();
 
         // Defect(s) Found: 
 
