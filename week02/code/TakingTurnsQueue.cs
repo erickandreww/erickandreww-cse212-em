@@ -39,7 +39,7 @@ public class TakingTurnsQueue
         }
         else
         {
-            Person person = _people.Dequeue();
+            Person person = _people.Dequeue(); //a
             if (person.Turns > 1)
             {
                 person.Turns -= 1;

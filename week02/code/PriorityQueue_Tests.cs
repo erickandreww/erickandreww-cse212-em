@@ -8,7 +8,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: 
     // Expected Result: 
-    // Defect(s) Found: 
+    // Defect(s) Found: a
     public void TestPriorityQueue_1()
     {
         var priorityQueue = new PriorityQueue();
